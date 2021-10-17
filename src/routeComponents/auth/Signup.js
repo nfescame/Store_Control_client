@@ -22,6 +22,7 @@ function Signup(props) {
 
     try {
       const response = await api.post("/signup", state);
+      console.log(response);
       setErrors({ name: "", password: "", email: "" });
       props.history.push("/auth/login");
     } catch (err) {
@@ -35,11 +36,11 @@ function Signup(props) {
       <h1>Signup!</h1>
 
       <div>
-        <label htmlFor="signupFormName">Name</label>
+        <label htmlFor='signupFormName'>Name</label>
         <input
-          type="text"
-          name="name"
-          id="signupFormName"
+          type='text'
+          name='name'
+          id='signupFormName'
           value={state.name}
           error={errors.name}
           onChange={handleChange}
@@ -47,11 +48,11 @@ function Signup(props) {
       </div>
 
       <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
+        <label htmlFor='signupFormEmail'>E-mail Address</label>
         <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
+          type='email'
+          name='email'
+          id='signupFormEmail'
           value={state.email}
           error={errors.email}
           onChange={handleChange}
@@ -59,11 +60,11 @@ function Signup(props) {
       </div>
 
       <div>
-        <label htmlFor="signupFormPassword">Password</label>
+        <label htmlFor='signupFormPassword'>Password</label>
         <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
+          type='password'
+          name='password'
+          id='signupFormPassword'
           value={state.password}
           error={errors.password}
           onChange={handleChange}
@@ -71,9 +72,9 @@ function Signup(props) {
       </div>
 
       <div>
-        <button type="submit">Signup!</button>
+        <button type='submit'>Signup!</button>
 
-        <Link to="/auth/login">
+        <Link to='/auth/login'>
           Already have an account? Click here to login.
         </Link>
       </div>
